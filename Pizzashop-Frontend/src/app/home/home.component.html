@@ -1,0 +1,16 @@
+<div *ngIf="isSignedin" class="bg-info p-2 text-white bg-opacity-25 " style="background-image: linear-gradient(rgb(34, 152, 203), rgb(107, 154, 40), rgb(119, 71, 223));">
+	<h1 align="center"><p style=" font-family:cursive">Welcome back, {{ signedinUser }}!</p></h1>
+
+	<div *ngFor="let greet of greeting">
+		{{greet}}
+	</div>
+
+	<p><a style="text-decoration: underline; cursor: pointer;" (click)="doSignout()"><h3 style="color: rgb(232, 59, 16); font-family:cursive">Signout</h3></a></p>
+</div>
+
+<app-about></app-about>
+<app-gallary></app-gallary>
+<app-menu></app-menu>
+<app-chef></app-chef>
+<app-testimonial></app-testimonial>
+

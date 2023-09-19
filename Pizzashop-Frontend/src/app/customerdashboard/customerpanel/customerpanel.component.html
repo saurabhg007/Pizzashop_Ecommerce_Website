@@ -1,0 +1,167 @@
+<div style="background-image: linear-gradient(rgb(200, 57, 57), rgba(42, 146, 195, 0.829), green);">
+<section class="py-2 text-center container sec">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="text">Pizza's</h1>
+      <p class="text">"A good quality pizza should have a well-balanced texture that is neither too rigid nor too soft. The assessment of pizza texture often involves tactile evaluation. The texture of a pizza depends on the physical characteristics of the dough and the cooking process. A high-quality pizza will have a crust that strikes the right balance between crispy and tender, avoiding excessive hardness or sogginess. It should not be overly crumbly or brittle. Instead, it should offer a pleasing mouthfeel that complements the toppings and sauce."
+        <br>
+        - Pizza Delicous
+      </p>
+    </div>
+  </div>
+</section>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark my-3 bg-primary p-2 text-black bg-opacity-25">
+  <div class="container-fluid" style="background-image: linear-gradient(rgb(203, 51, 34), rgb(184, 171, 24), rgb(198, 27, 132));">
+    <label class="form-label me-2" for="ct_catid">
+      <h3>Category</h3>
+    </label>
+    <select id="sl" aria-describedby="emailHelp" [(ngModel)]="catid" (change)="showValue()">
+      <option *ngFor="let a of catObj" [value]="a.catid">{{a.catnm}}</option>
+    </select>
+    <button data-bs-target="#showcart" (click)="showcart()"
+      class="btn btn-outline-dark bg-light material-symbols-outlined float-end" data-bs-toggle="modal" type="submit"><i
+        class="fa fa-cart-arrow-down" style="font-size:48px;color:rgb(21, 137, 214)"></i></button>
+  </div>
+</nav>
+
+<div class="mb-3 container">
+  <div class="modal fade" id="showcart" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Description : </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <table class="table table-responsive">
+            <tr>
+              <td>Name</td>
+              <td>Quantity</td>
+              <td>Price</td>
+              <td>Image</td>
+              <td>Action</td>
+            </tr>
+            <tr *ngFor="let a of cart">
+              <td>{{a.prnm}}</td>
+              <td>{{a.qty}}</td>
+              <td>{{a.qty * a.price}}</td>
+              <td><img src="data:image/*;base64,{{a.pic}}" height="60" width="0"></td>
+              <td><button (click)="deletecart(a)" class="btn btn-danger">
+                  <span class="material-symbols-outlined">
+                    delete
+                  </span>
+                </button></td>
+            </tr>
+          </table>
+          <hr>
+
+
+
+
+
+
+          <div class="container12">
+            <div id="h1dv">
+              <h1 id="s1">Shipping</h1>
+            <p id="sp1">Please enter your shipping details.</p>
+            </div>
+
+            <hr />
+            <div class="form">
+
+              <div class="fields fields--2">
+                <label class="field">
+                  <span class="field__label" for="firstname">First name</span>
+                  <input class="field__input form-control" type="text" id="firstname" />
+                </label>
+                <label class="field">
+                  <span class="field__label" for="lastname">Last name</span>
+                  <input class="field__input form-control" type="text" id="lastname"  />
+                </label>
+              </div>
+              <label class="field">
+                <span class="field__label" for="address">Address</span>
+                <input class="field__input form-control" type="text" id="address" />
+              </label>
+              <label class="field">
+                <span class="field__label" for="country">Country</span>
+                <input class="field__input form-control" type="text" id="address" />
+              </label>
+              <div class="fields fields--3">
+                <label class="field">
+                  <span class="field__label" for="zipcode">Zip code</span>
+                  <input class="field__input form-control" type="text" id="zipcode" />
+                </label>
+                <label class="field">
+                  <span class="field__label" for="city">City</span>
+                  <input class="field__input form-control" type="text" id="city" />
+                </label>
+                <label class="field">
+                  <span class="field__label" for="state">State</span>
+                  <input class="field__input form-control" type="text" id="city"  />
+                </label>
+              </div>
+            </div>
+            <hr>
+            <button class="button" (click)="saveF()">Save</button>
+          </div>
+
+
+
+          <hr>
+          <h5>Total : {{tot}}</h5>
+          <hr>
+
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <button type="button" class="ord btn btn-warning" (click)="ordernow()" aria-label="Order Now">Order Now</button>
+
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="bk7 album py-5  ">
+  <div class="container col-8">
+
+
+
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-2">
+
+
+      <ng-container *ngFor="let a of prdtbycat">
+        <div class="book-container ">
+          <div class="book-card">
+            <div>
+              <img src="data:image/*;base64,{{a.pic}}" width="100%" height="300px">
+            </div>
+            <div class="book-name">
+              <strong class="fs-3" data-bs-toggle="modal" data-bs-target="#showdescrip"> {{a.prnm}} </strong>
+            </div>
+            <div class="details">
+              <div class="book-type">Type : {{a.descrip}}</div>
+              <div class="book-price">Price: {{a.price | currency : 'INR'}}</div>
+            </div>
+            <div class="book-buttons">
+              <button type="button" class="btn btn-outline-success my-3" (click)="addtolocalstorage(a)">Add
+                Cart</button>
+
+            </div>
+          </div>
+        </div>
+
+      </ng-container>
+    </div>
+
+  </div>
+</div>

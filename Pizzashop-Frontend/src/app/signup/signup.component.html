@@ -1,0 +1,55 @@
+<!-- <div class="container" id="container">
+	<h2> Sing Up Form</h2>
+
+	<div id="login-box">
+
+		<div class="left-box">
+			<form name='signupForm' (submit)="doSignup()">
+				<h3> Sign Up </h3>
+				<div style="color : red" *ngIf='error'>{{error}}</div>
+				<div style="color : green" *ngIf='success'>{{success}}</div>
+				<input type="text" name="username" placeholder="Username" [(ngModel)]="username" />
+
+				<input type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
+
+				<div *ngFor="let role of user_roles" class="my-2">
+					<input class="me-2" [(ngModel)]="role.selected" name="{{ role.name }}" type="checkbox"
+						id="{{role.name}}" (change)="onChangeCategory($event, role)">
+					<label class="form-check-label" for="{{role.name}}">
+						{{role.name}}
+					</label>
+				</div>
+				<input class="my-5" type="submit" name="singup-button" placeholder="Sing Up" />
+			</form>
+
+		</div> -->
+    <div class=" bg-info p-2 text-white bg-opacity-25">
+		<div id="login-box">
+      <div class="left">
+        <h1>Sign up</h1>
+        <form name='signupForm' (submit)="doSignup()">
+
+          <div style="color : red" *ngIf='error'>{{error}}</div>
+          <div style="color : green" *ngIf='success'>{{success}}</div>
+        <input type="text" name="username" placeholder="Username" [(ngModel)]="username" />
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
+        <div *ngFor="let role of user_roles" class="my-2">
+					<input class="me-2" [(ngModel)]="role.selected" name="{{ role.name }}" type="checkbox"
+						id="{{role.name}}" (change)="onChangeCategory($event, role)">
+					<label class="form-check-label" for="{{role.name}}">
+						{{role.name}}
+					</label>
+				</div>
+        <input type="submit" name="signup_submit" value="Sign  up" />
+      </form>
+      </div>
+
+      <div class="right">
+        <span class="loginwith" >Sign in with<br />social network</span>
+        <button class="social-signin facebook"><a href="https://www.facebook.com/saurabh.gawali.526/" target="_blank"></a>Log in with facebook</button>
+        <button class="social-signin twitter"><a href="https://twitter.com/Saurabhg__007"></a>Log in with Twitter</button>
+        <button class="social-signin google">Log in with Google+</button>
+      </div>
+      <div class="or">OR</div>
+    </div>
+  </div>

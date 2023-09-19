@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark my-3 bg-success navbar-dark" *ngIf="isSignedin">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav me-5">
+        <a class="nav-link active me-5" (click)="categorybtn()">Category</a>
+        <a class="nav-link active me-5" (click)="productbtn()">Product</a>
+        <a class="nav-link active me-5" (click)="logoutbtn()">Logout</a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container m-3 ">
+  <ng-template [ngIf]="toggle">
+    <div class="container text-dark">
+       <app-category></app-category>
+    </div>
+  </ng-template>
+
+  <ng-template [ngIf]="!toggle">
+    <div class="container text-dark ">
+      <app-listproduct></app-listproduct>
+    </div>
+  </ng-template>
+</div>

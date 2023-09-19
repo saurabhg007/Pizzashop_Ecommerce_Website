@@ -1,0 +1,112 @@
+/* Style the modal container */
+#addprdt {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Style the modal dialog */
+.modal-dialog {
+  max-width: 500px; /* Adjust the maximum width as needed */
+  margin: 30px auto; /* Center the modal vertically and horizontally */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the modal content */
+.modal-content {
+  padding: 20px;
+}
+
+/* Style the modal header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+/* Style the modal title */
+.modal-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Style the modal close button */
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Style form elements */
+.form-label {
+  font-weight: bold;
+}
+
+/* Style input fields and textareas */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style the select dropdown */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style the file input */
+.up {
+  display: none;
+}
+
+/* Style the image preview */
+img {
+  max-width: 100%;
+  max-height: 100px;
+  margin-top: 10px;
+}
+
+/* Style modal footer */
+.modal-footer {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  text-align: right;
+}
+
+/* Style modal buttons */
+.btn {
+  margin-left: 10px;
+}
+
+/* Style the add button */
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+}
+
+/* Style the close button */
+.btn-warning {
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+  opacity: 0.8;
+}

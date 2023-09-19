@@ -1,0 +1,17 @@
+.navbar .navbar-collapse {
+  text-align: center;
+  justify-content: center;
+}
+.navbar{
+  background-image: linear-gradient(80deg, #da0266, #4d3dab);
+}
+a{
+  cursor: pointer;
+}
+
+.container1{
+display: flex;
+justify-content: center;
+align-items: center;
+margin: auto;
+}
